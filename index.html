@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-800">
+    <!-- <h1 class="">Payoo</h1> -->
+
+    <section class="max-w-md min-h-screen mx-auto bg-gray-200">
+
+        <header>
+            <nav class="flex justify-center items-center mt-16">
+                <div class="mt-20 relative flex justify-center items-center w-9/12 mb-10">
+                    <img class="w-48 absolute" src="assets/bg.png" alt="">
+                    <img class="w-1/6" src="assets/Group.png" alt="">
+                </div>
+            </nav>
+        </header>
+
+        <!-- login section -->
+
+        <div class="hero bg-base-200">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                    <fieldset class="fieldset">
+                        <label class="label">Acount Number</label>
+                        <input id="accountNumber" type="number" class="input" placeholder="Type Your Acount Number" required/>
+                        <label class="label">PIN</label>
+                        <input value="1234" id="pinNumber" type="text" class="input" placeholder="Type Your PIN" required/>
+                        <div><a class="link link-hover">Forgot password?</a></div>
+                        <button id="loginBtn" class="btn btn-neutral mt-4">Login</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <script src="script/index.js"></script>
+
+</body>
+
+</html>
