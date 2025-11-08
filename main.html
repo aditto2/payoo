@@ -15,15 +15,18 @@
             <nav class="flex justify-around items-center">
                 <img src="assets/Group.png" alt="">
                 <div>
-                    <h1 class="text-3xl font-bold">$4500</h1>
+                    <h1 class="text-3xl font-bold">$ <span id="mainBalance">4500</span></h1>
                     <p class="border rounded p-1">Available balance</p>
                 </div>
                 <button>Logout</button>
             </nav>
+
+            <!-- welcome section -->
             <section class="mt-10">
                 <h1 class="text-2xl font-bold mb-2">Welcome To Payoo</h1>
                 <p>Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
+                <!-- cards container -->
                 <div class="cards grid grid-cols-3 mt-14 gap-2 p-2">
                     <div class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/wallet1.png" alt="">
@@ -49,12 +52,53 @@
                         <img class="w-8 mx-auto" src="assets/transaction1.png" alt="">
                         <h3>Transaction History</h3>
                     </div>
-
-
                 </div>
+
+                <!-- add money section -->
+                <section>
+                    <h2 class="h-2 text-blue-500 font-semibold text-xl px-3 pt-2">Add Money</h2>
+                    <div class="hero bg-base-200 min-h-screen">
+                        <div class="hero-content flex-col lg:flex-row-reverse">
+                            <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                                <div class="card-body">
+                                    <fieldset class="fieldset">
+                                        <legend class="fieldset-legend">Select Bank</legend>
+                                        <select class="select">
+                                            <option disabled selected>Select a Bank</option>
+                                            <option value="Bikash">Bikash</option>
+                                            <option value="Nagad">Nagad</option>
+                                            <option value="DBBL">DBBL</option>
+                                        </select>
+                                        <span class="label">Optional</span>
+                                    </fieldset>
+                                    <fieldset class="fieldset">
+                                        <label class="label">Bank Account Number</label>
+                                        <input maxlength="11" type="number" class="input"
+                                            placeholder="Enter 11 digit account number" />
+
+                                        <label class="label">Amount</label>
+                                        <input id="amount" type="number" class="input"
+                                            placeholder="Amount to withdraw" />
+
+                                        <label class="label">Pin Number</label>
+                                        <input type="password" id="pinNumber" class="input"
+                                            placeholder="Enter 4 digit pin number" />
+
+                                        <div><a class="link link-hover">Forgot password?</a></div>
+                                        <button id="addMoney"
+                                            class="btn btn-neutral rounded bg-blue-700 border-none mt-4">Add
+                                            Money</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </section>
         </header>
     </section>
+
+    <script src="script/addMoney.js"></script>
 </body>
 
 </html>
