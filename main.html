@@ -7,6 +7,7 @@
     <title>Main file</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://kit.fontawesome.com/f668b39ff0.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="bg-slate-800">
@@ -28,34 +29,88 @@
 
                 <!-- cards container -->
                 <div class="cards grid grid-cols-3 mt-14 gap-2 p-2">
-                    <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                    <div id="addMoneyBox" class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/wallet1.png" alt="">
                         <h3>Add Money</h3>
                     </div>
-                    <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                    <div id="cashOutBox" class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/send1.png" alt="">
-                        <h3>Cashout</h3>
+                        <h3>Cash Out</h3>
                     </div>
-                    <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                    <div id="transferMoneyBox" class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/money1.png" alt="">
                         <h3>Transfer Money</h3>
                     </div>
-                    <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                    <div id="getBonusBox" class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/bonus1.png" alt="">
                         <h3>Get Bonus</h3>
                     </div>
-                    <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                    <div id="payBillBox" class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/purse1.png" alt="">
                         <h3>Pay Bill</h3>
                     </div>
-                    <div class="box cursor-pointer border p-4 text-center rounded-sm">
+                    <div id="transactionHistoryBox" class="box cursor-pointer border p-4 text-center rounded-sm">
                         <img class="w-8 mx-auto" src="assets/transaction1.png" alt="">
                         <h3>Transaction History</h3>
                     </div>
                 </div>
 
+                <!-- transaction history -->
+                <section id="transactionHistory" class="p-5">
+                    <div id="transactionContainer">
+                        <ul class="list bg-base-100 rounded-box shadow-md">
+
+                        <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">Most played songs this week</li>
+
+                        <li class="list-row">
+                            <div><img class="size-8 rounded-box" src="assets/wallet1.png" /></div>
+                            <div>
+                                <div>Electricity Bill</div>
+                                <div class="text-xs uppercase font-semibold opacity-60">Today 01:44 AM</div>
+                            </div>
+                            <button class="btn btn-square btn-ghost">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </li>
+
+                        <li class="list-row">
+                            <div><img class="size-8 rounded-box" src="assets/wallet1.png" /></div>
+                            <div>
+                                <div>Bank Deposit</div>
+                                <div class="text-xs uppercase font-semibold opacity-60">Today 01:33 AM</div>
+                            </div>
+                            <button class="btn btn-square btn-ghost">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </li>
+
+                        <li class="list-row">
+                            <div><img class="size-8 rounded-box" src="assets/wallet1.png" /></div>
+                            <div>
+                                <div>Mobile Recharge</div>
+                                <div class="text-xs uppercase font-semibold opacity-60">Today 10:45 AM</div>
+                            </div>
+                            <button class="btn btn-square btn-ghost">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </li>
+                        <li class="list-row">
+                            <div><img class="size-8 rounded-box" src="assets/wallet1.png" /></div>
+                            <div>
+                                <div>Gas Bill</div>
+                                <div class="text-xs uppercase font-semibold opacity-60">Today 10:45 AM</div>
+                            </div>
+                            <button class="btn btn-square btn-ghost">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </li>
+
+                    </ul>
+                    </div>
+                </section>
+
                 <!-- add money section -->
-                <section>
+                <section id="addMoney">
                     <h2 class="h-2 text-blue-500 font-semibold text-xl px-3 pt-2">Add Money</h2>
                     <div class="hero bg-base-200 min-h-screen">
                         <div class="hero-content flex-col lg:flex-row-reverse">
@@ -63,7 +118,7 @@
                                 <div class="card-body">
                                     <fieldset class="fieldset">
                                         <legend class="fieldset-legend">Select Bank</legend>
-                                        <select class="select">
+                                        <select id="allBank" class="select">
                                             <option disabled selected>Select a Bank</option>
                                             <option value="Bikash">Bikash</option>
                                             <option value="Nagad">Nagad</option>
@@ -73,7 +128,7 @@
                                     </fieldset>
                                     <fieldset class="fieldset">
                                         <label class="label">Bank Account Number</label>
-                                        <input maxlength="11" type="number" class="input"
+                                        <input id="account" maxlength="11" type="number" class="input"
                                             placeholder="Enter 11 digit account number" />
 
                                         <label class="label">Amount</label>
@@ -85,7 +140,7 @@
                                             placeholder="Enter 4 digit pin number" />
 
                                         <div><a class="link link-hover">Forgot password?</a></div>
-                                        <button id="addMoney"
+                                        <button id="addMoneyBtn"
                                             class="btn btn-neutral rounded bg-blue-700 border-none mt-4">Add
                                             Money</button>
                                     </fieldset>
@@ -94,11 +149,49 @@
                         </div>
                     </div>
                 </section>
+
             </section>
+
+            <!-- cash-out section -->
+            <section id="cashout">
+                <h2 class="h-2 text-blue-500 font-semibold text-xl px-3 pt-2">Cash Out</h2>
+                <div class="hero bg-base-200 min-h-screen">
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <div class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="label">Agent Number</label>
+                                    <input id="agentNumber" maxlength="11" type="number" class="input"
+                                        placeholder="Enter 11 digit number" />
+
+                                    <label class="label">Amount</label>
+                                    <input id="cashOutAmount" type="number" class="input"
+                                        placeholder="Enter amount to withdraw" />
+
+                                    <label class="label">Pin Number</label>
+                                    <input type="password" id="cashOutPin" class="input"
+                                        placeholder="Enter 4 digit pin number" />
+
+                                    <div><a class="link link-hover">Forgot PIN?</a></div>
+                                    <button id="cashOutBtn"
+                                        class="btn btn-neutral rounded bg-blue-700 border-none mt-4">Withdraw
+                                        Money</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </header>
     </section>
 
+
+
     <script src="script/addMoney.js"></script>
+    <script src="script/toggle.js"></script>
+    <script src="script/cashOut.js"></script>
+    <script src="utilities/utilities.js"></script>
 </body>
 
 </html>
